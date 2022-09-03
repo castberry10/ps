@@ -13,3 +13,5 @@ n, m = map(int, input().split())
 map1 = [list(map(int, input().split())) for _ in range(n)]
 a = int(sys.stdin.readline())
 print(map1)
+
+visitMap = [[0 for _ in range(10)] for _ in range(10)]
