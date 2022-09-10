@@ -6,4 +6,4 @@ def cntF():
     for i in range(n):
         for j in range(n):
             if paper[0][0] != paper[i][j]:
-                ck = 0
+                
