@@ -6,6 +6,8 @@
 #전위 순회 preorder traversal 노드 -> 왼 -> 오
 #중위 순회 inorder traversal 왼 -> 노드 -> 오
 #후위 순회 postorder traversal 왼 -> 오 -> 노드 
+import sys
+sys.setrecursionlimit(10 ** 5)
 answer = []
 class Node:
     def __init__(self, data):
@@ -25,19 +27,20 @@ class Tree:
         cur = self.root 
         while True:
             if cur.data < data:# 
-                if cur.right.data == None:
-                    cur.right.data = Node(data)
+                if cur.right == None:
+                    cur.right = Node(data)
                     return
                 else: #비어있지않다면 
                     cur = cur.right
-            else:#작다면[ cur.data > data ]
-                if cur.left.data == None:
-                    cur.left.data = Node(data)
+            elif cur.data > data:
+                if cur.left == None:
+                    cur.left = Node(data)
                     return
                 else:
                     cur = cur.left
     
     def postorder(self, node = None):
+        global answer
         if node == None:
             node = self.root
         if node.left != None:
@@ -50,6 +53,11 @@ class Tree:
         
 tree = Tree()
 
+
+# tree.add(50)
+# tree.add(30)
+# tree.add(24)
+# tree.add(100) Debuging 
 while True:
     try:
         a = int(input())
