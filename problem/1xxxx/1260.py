@@ -3,4 +3,6 @@ class Node:
         self.data = data
         self.childs = {}
     
-clss
+class g:
+    def __init__(self):
+        self
