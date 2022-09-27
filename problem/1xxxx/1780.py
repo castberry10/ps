@@ -36,9 +36,11 @@ def cntPaper(x, y, m):
     for i in range(x, x + m):
         if not ck:
             break
+            
         for j in range(y, y+m):
             if cknum != paper[j][i]:
                 ck = False
+                
                 break
     
     if ck:#색이 같다면 
@@ -52,18 +54,33 @@ def cntPaper(x, y, m):
             answer[2] += 1
             # print('answer[2]')
     else: # 색이 다르다면 
-        cntPaper(x, y, m//3)
-        cntPaper(x, y+ m//3, m//3)
-        cntPaper(x, y+ m//3+ m//3, m//3)
+        mc = m // 3
+        # cntPaper(x, y, mc) # 1
+        # cntPaper(x, y+ mc, mc) # 2
+        # cntPaper(x, y+ mc+ mc, mc) # 3
         
-        cntPaper(x+ m//3, y, m//3)
-        cntPaper(x+ m//3, y+ m//3, m//3)
-        cntPaper(x+ m//3, y+ m//3+ m//3, m//3)
+        # cntPaper(x+ mc, y, mc) # 4 
+        # cntPaper(x+ mc, y+ mc, mc) # 5 
+        # cntPaper(x+ mc, y+ mc+ mc, mc) # 6
         
-        cntPaper(x+ m//3+ m//3, y, m//3)
-        cntPaper(x+ m//3+ m//3, y+ m//3, m//3)
-        cntPaper(x+ m//3+ m//3, y+ m//3+ m//3, m//3)
-         
+        # cntPaper(x+ mc+ mc, y, mc)# 7
+        # cntPaper(x+ mc+ mc, y+ mc, mc) # 8 
+        # cntPaper(x+ mc+ mc, y+ mc+ mc, mc) # 9
+        cntPaper(y, x, mc) # 1
+        cntPaper(y, x+ mc, mc) # 2
+        cntPaper(y, x+ mc+ mc, mc) # 3
+        
+        cntPaper(y+ mc, x, mc) # 4 
+        cntPaper(y+ mc, x+ mc, mc) # 5 
+        cntPaper(y+ mc, x+ mc+ mc, mc) # 6
+        
+        cntPaper(y+ mc+ mc, x, mc)# 7
+        cntPaper(y+ mc+ mc, x+ mc, mc) # 8 
+        cntPaper(y+ mc+ mc, x+ mc+ mc, mc) # 9
+        return
+        # 1 4 7
+        # 2 5 8
+        # 3 6 9
 
 cntPaper(0, 0, n)
 
