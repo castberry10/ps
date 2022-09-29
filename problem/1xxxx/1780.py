@@ -40,7 +40,7 @@ def cntPaper(x, y, m):
             break
             
         for j in range(y, y+m):
-            if cknum != paper[i][j]:
+            if cknum != paper[j][i]:
                 ck = False
                 
                 break
