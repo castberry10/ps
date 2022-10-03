@@ -1,8 +1,7 @@
 N, M = map(int, input().split())
+A = list(map(int , input().split()))
+A.sort()
 #N에서 M만ㅋㅡㅁ 뽑는다 
-#1 1 < 4 2 
-#1 2 . . . 
- # 중복상관 O
 answer = []
 def bt(cnt):
     # 2 2  > 
@@ -18,7 +17,7 @@ def bt(cnt):
         print(a)
         return
 	    
-    for i in range(1, N + 1):
+    for i in A:
         
         if i not in answer:
             answer.append(i)
