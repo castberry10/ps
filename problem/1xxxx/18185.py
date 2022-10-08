@@ -12,22 +12,25 @@ a = list(map(int, input().split())) #a의 범위는 n
 answer = 0
 
 for i in range(n - 2):
+    if a[i + 1] > a[i + 2]:
+        min5 = min(a[i + 1] - a[i + 2], a[i])
+        
+        # print(a, 5, i)
+        answer += 5 * min5
+        a[i] -= min5
+        a[i + 1] -= min5
+        
     if a[i] > 0 and a[i + 1] > 0 and a[i + 2] > 0:
-        if a[i + 1] > a[i + 2]:
-            # for j in range(a[i+1] - a[i+2]):
-            #     if a[i] == 0:
-            #         break
-            #     a[i + 1] -= 1
-            #     a[i + 0] -= 1
-            #     answer += 5
-            # #두개 묶음 처리 끝
-            min5 = min(a[i], a[i + 1])
-            # print(a, 5, i)
-            answer += 5 * min5
-            a[i] -= min5
-            a[i + 1] -= min5
-            if a[i] == 0:
-                continue
+        # if a[i + 1] > a[i + 2]:
+            
+        #     # min5 = min(a[i], a[i + 1])
+        #     # print(a, 5, i)
+        #     # answer += 5 * min5
+        #     # a[i] -= min5
+        #     # a[i + 1] -= min5
+            
+            
+                
         min7 = min(a[i], a[i + 1], a[i + 2])
         # print(a, 7, i)
         a[i + 0] -= min7
