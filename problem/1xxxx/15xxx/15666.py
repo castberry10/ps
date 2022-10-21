@@ -10,6 +10,8 @@ def bt(cnt):
     if cnt  == M:
         c1 = len(answerlist)
         a = ''
+        if answer != sorted(answer):
+            return
         for i in answer:
         	a += str(i) + ' '
         
@@ -19,7 +21,7 @@ def bt(cnt):
             return
         print(a)
         return
-	    
+
     for i in A:
         answer.append(i)
         bt(cnt + 1)
