@@ -1,19 +1,13 @@
 import java.util.Scanner;
- 
- 
 public class jiwon1 {
-	
 	public static String[] board;
 	public static String[] TM = {"T","E","E","M","O"};
 	public static String[] tm = {"t", "e", "e", "m", "o"};
 	
-	
 	public static void main(String[] args) {
 		
 		Scanner in = new Scanner(System.in);
-		int testcase = in.nextInt(); 
-		
-		
+		int testcase = in.nextInt(); 	
 		
 		for(int case1 = 0; case1 < testcase; case1++){
 			int m = in.nextInt(); //세로 

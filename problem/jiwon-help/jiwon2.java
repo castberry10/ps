@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
  
-public class jiwon2 {
+public class Jiwon2 {
 	
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
