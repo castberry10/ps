@@ -1,3 +1,5 @@
 k, n, m = map(int, input().split())
-
-print(m - k * n )
+if k * n < m:
+    print(0)
+else:
+    print( k * n - m)
