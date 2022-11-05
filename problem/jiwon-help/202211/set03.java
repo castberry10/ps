@@ -23,6 +23,7 @@ public class set03{
 		Scanner sc = new Scanner(System.in);
 		String data = sc.next();
 		int n = sc.nextInt();
+		String[] = data.split("");
 		
 		while(sc.hasNextLine()) {
 			dataline = sc.nextLine();
