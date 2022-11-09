@@ -1,7 +1,9 @@
-n = int(input())
-s = input()
-a = 0
-for i in s:
-    if i == "a" or i == "o" or i == "e" or i == "i" or i == "u":
-        a += 1
-print(a)
+a = int(input())
+b = int(input())
+if a >= 3 and b <= 4:
+    print("TroyMartian")
+if 6 > b and a >= 2:
+    print("VladSaturnian")
+if 2 >= a and b <= 3:
+    print("GraemeMercurian")
+    
