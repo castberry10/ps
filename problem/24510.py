@@ -7,4 +7,4 @@ for _ in range(n):
     st = input()
     for c in st:
         queue.append(c)
-        
+        #푸는 중 
