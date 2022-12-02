@@ -14,4 +14,4 @@ for i in range(1, n+1):
                 tof = False
     if tof:
         cnt += 1
-print(cnt)        
+print(cnt)        #생각해보면 .. 그냥 첫자리랑 둘번째 자리랑, 두번째 자리랑 세번째 자리랑 비교하는 코드를 작성했다면 .. 
