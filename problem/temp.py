@@ -1,9 +1,5 @@
-a = int(input())
-b = int(input())
-if a >= 3 and b <= 4:
-    print("TroyMartian")
-if 6 > b and a >= 2:
-    print("VladSaturnian")
-if 2 >= a and b <= 3:
-    print("GraemeMercurian")
-    
+a = set()
+s = input()
+for c in s:
+    a.add(ord(c))
+print(len(s)//len(a))
