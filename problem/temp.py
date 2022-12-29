@@ -1,5 +1,9 @@
-a = set()
-s = input()
-for c in s:
-    a.add(ord(c))
-print(len(s)//len(a))
+a = input()
+ac = 0
+bc  = 0
+for i in a:
+    if i == 'A':
+        ac += 1
+    else:
+        bc += 1
+print(ac,':',bc,sep = '')
