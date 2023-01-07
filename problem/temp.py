@@ -1,9 +1,10 @@
-a = input()
-ac = 0
-bc  = 0
-for i in a:
-    if i == 'A':
-        ac += 1
+sum = 0
+while True:
+    n = int(input())
+    
+    
+    if n == -1:
+        print(sum)
+        break
     else:
-        bc += 1
-print(ac,':',bc,sep = '')
+        sum += n
