@@ -1,4 +1,6 @@
 import collections
+import sys
+sys.setrecursionlimit(100000)
 A, B, C, K = map(int, input().split())
 state = 0 # 90 180 270 360 [% 360] 
 # j = list(A, B, C)
@@ -15,19 +17,24 @@ def bt():
     if K == 0 and state == 0:
         if answer < answercnt:
             answercnt = answer
+            return
     state = state % 360 
     if K == 0 and state == 0:
         if answer < answercnt:
             answercnt = answer
+            return
     if K >= A:
         answer += 1
         K -= A
+        if K < 0:
+            K += A
+            return
         if state == 0:
             state = 270 
         else:
-            state -= 30
+            state -= 90
         bt()
-        state += 30
+        state += 90
         state = state % 360 
         K += A
         answer -= 1
@@ -37,9 +44,12 @@ def bt():
     if K >= B:
         answer += 1
         K -= B
-        state += 30
+        if K < 0:
+            K += B
+            return
+        state += 90
         bt()
-        state -= 30
+        state -= 90
         state = state % 360 
         K += B
         answer -= 1
@@ -49,6 +59,10 @@ def bt():
     if K >= C:
         answer += 1
         K -= C
+        if K < 0:
+            K += C
+            return
+        
         state += 180
         bt()
         state -= 180
