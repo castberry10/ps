@@ -1,10 +1,8 @@
-sum = 0
+cnt = 0
 while True:
-    n = int(input())
-    
-    
-    if n == -1:
-        print(sum)
+    try:
+        a = input()
+        cnt += 1
+    except:
+        print(cnt)
         break
-    else:
-        sum += n
