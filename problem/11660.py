@@ -9,7 +9,22 @@ for i in range(n):
 #        0 4 10
 for i in range(1, n + 1):
     for j in range(1, n + 1):
-        ps = data[]
+        ps[i][j] = data[i-1][j-1] + ps[i][j-1] + ps[i-1][j] - ps[i-1][j-1]
         
+#########
+# debug #
+#########
+
+# print("ps = ")
+# for i in range(n + 1):
+#     for j in range(n + 1):
+#         print(ps[i][j], end = " ")
+#     print()
+
+
+
 for _ in range(m):
-    x1, y1, x2, y2 = map(int, input().split())
+    y1, x1, y2, x2 = map(int, input().split())
+    # print(ps[y2][x2], ps[y2][x1], ps[y1][x2], ps[y1][x1])
+    print(ps[y2][x2]-ps[y2][x1 - 1]-ps[y1 - 1][x2]+ps[y1 - 1][x1 - 1])
+    
