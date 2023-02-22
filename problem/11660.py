@@ -24,7 +24,7 @@ for i in range(1, n + 1):
 
 
 for _ in range(m):
-    y1, x1, y2, x2 = map(int, input().split())
+    y1, x1, y2, x2 = map(int, sys.stdin.readline().split())
     # print(ps[y2][x2], ps[y2][x1], ps[y1][x2], ps[y1][x1])
     print(ps[y2][x2]-ps[y2][x1 - 1]-ps[y1 - 1][x2]+ps[y1 - 1][x1 - 1])
     
