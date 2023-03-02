@@ -3,27 +3,23 @@ A = list(map(int , input().split()))
 A.sort()
 #N에서 M만ㅋㅡㅁ 뽑는다 
 answer = []
-answerlist = set()
+# answerlist = set()
+# temp = 0
+visit = [False] * (N + 2)
 def bt(cnt):
-    # 2 2  > 
-    # 1 1 1 2 2 1 2 2 > 
+    # global temp
+    temp = 0 
     if cnt  == M:
-        c1 = len(answerlist)
-        a = ''
-        for i in answer:
-        	a += str(i) + ' '
-        
-        answerlist.add(a)
-        c2 = len(answerlist)
-        if c1 == c2:
-            return
-        print(a)
+        print(" ".join(map(str, answer))) #  '구분자'.join(리스트)
         return
 	    
-    for i in A:
-        answer.append(i)
-        bt(cnt + 1)
-        answer.pop()
+    for i in range(N):
+        if A[i] != temp and visit[i] == False:
+            answer.append(A[i])
+            temp = A[i]
+            visit[i] = True
+            bt(cnt + 1)
+            answer.pop() #  지정한 위치 값을 삭제하고 삭제한 값 취득 (지정안하면 마지막 인덱스) [1, 2, 3] - > [1, 2]
+            visit[i] = False       
+        
 bt(0)
-
-#계수정렬 하거나 할듯  
