@@ -5,8 +5,9 @@ input = sys.stdin.readline
 n = int(input())
 m = int(input())
 inf = 10 ** 8
-dp = [inf for _ in range(n + 1)]
+dp = [[inf] for _ in range(n + 1)]
 graph = [[] for _ in range(n + 1)]
+graphline = [[] for _ in range(n + 1)]
 heap = []
 
 for i in range(m):
@@ -22,18 +23,14 @@ def dijkstra():
     dp[start] = 0
     
     while heap:
-        # print("log")
         t, l = heapq.heappop(heap) #time, location 
-        # print("t, l, dp[l]", t,l,dp[l])
         if dp[l] < t:
             continue
         
         for lp, tp in graph[l]: #갈수 있는 버스(도착지, 소요시간)
             
             time = t + tp # 소요시간 + 경유지까지 간 시간 = 도착지까지가는 총 시간
-            # print("dp[l], time, lp, tp", dp[l], time, lp, tp)
             if dp[lp] > time:#이 지금까지의 도착지까지 가는 총 시간보다 빠르다면? 
-                # print("dp[l], time, lp, tp", dp[l], time, lp, tp)
                 dp[lp] = time
                 heapq.heappush(heap, (time, lp))
 dijkstra()
