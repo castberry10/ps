@@ -1,18 +1,18 @@
-a, b = map(int, input().split())
-
-def print280():
-    print(280)
-
-def print320():
-    print(320)
-
-if a < 12:
-    print280()
-    
-elif a < 17:
-    if b == 1:
-        print280()
-    else:
-        print320()
-else:
-    print280()
+while True:
+    x, y = map(int, input().split())
+    if x == 0 and y == 0:
+        print("AXIS")
+        break 
+    if x == 0 or y == 0:
+        print("AXIS")
+        continue
+    if x > 0:
+        if y > 0:
+            print("Q1")
+        else:
+            print("Q4")
+    elif x < 0:
+        if y > 0:
+            print("Q2")
+        else:
+            print("Q3")
