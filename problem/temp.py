@@ -1,1 +1,6 @@
-print(chr(99), chr(97),chr(115),chr(116),chr(98),chr(101),chr(114),chr(114),chr(121),sep = "")
+data = []
+
+for i in range(int(input())):
+    data = list(map(int, input().split()))
+    data.sort()
+    print(data[7])
