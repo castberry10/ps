@@ -1,6 +1,6 @@
 n = int(input())
 
-data = [0] * (n + 1)
+data = [0] * (n + 3)
 data[2] = 1
 for i in range(3, n+1):
     data[i] = data[i-1] + 1
