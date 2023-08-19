@@ -8,14 +8,16 @@ qindex = s.index('?')
 for word in a:
     tof = True
     s[qindex] = word
-    if word in ss:
-        # print('0', word, s)
-        tof = False
-        # continue
+    # if word in ss:
+    #     tof = False
+    for i in range(n):
+        for j in range(i):
+            if s[i] == s[j]:
+                tof=False
+                continue
         
-    for i in range(2, n):
-        # print('1', s[i-1][-1], s[i][0])
-        if s[i-1][-1] != s[i][0]:
+    for i in range(n - 1):
+        if s[i][-1] != s[i + 1][0]:
             tof = False
     if tof:
         print(word)
