@@ -1,13 +1,34 @@
-def islen3(x):
-    return len(x) == 3
+import numpy
+dataset = set()
 
-n = int(input())
-data = []
-for i in range(n):
-    data.append(input())
-
-data3 = list(filter(islen3, data))
-
-data3.sort()
-
-print(data3[0])
+a, b = 0, 0
+while True:
+    while True:
+        c = numpy.random.randint(1, 10001)
+        if c in dataset:
+            pass
+        else:
+            break
+    print('? A', c, flush=True)
+    resp = int(input())
+    if resp == 1:
+        a = c
+        break
+    else:
+        dataset.add(c)
+dataset = set()
+while True:
+    while True:
+        c = numpy.random.randint(1, 10001)
+        if c in dataset:
+            pass
+        else:
+            break
+    print('? B', c, flush=True)
+    resp = int(input())
+    if resp == 1:
+        b = c
+        break
+    else:
+        dataset.add(c)
+print('!', a + b)
