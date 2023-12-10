@@ -9,10 +9,8 @@ Ar = dict()
 Br = dict()
 Cr = set()
 
-Ac = 0  # 주문 받은 수
 Am = 0  # 가격 총합
 
-Bc = 0  # 받은 수
 Bm = 0  # 가격 총합
 
 Cc = 0
@@ -30,11 +28,9 @@ n = int(input())
 for _ in range(n):
     d = input()
     if d in Ar:
-        Ac += 1
         Am += Ar[d]
 
     elif d in Br:
-        Bc += 1
         Bm += Br[d]
 
     elif d in Cr:
@@ -42,7 +38,7 @@ for _ in range(n):
 
 if Cc == 1:  # 스페셜 메뉴가 있니?
     if Bm + Am >= 50000:
-        if Bc > 0:
+        if Bm > 0:
             if Am >= 20000:
                 print('Okay')
             else:
@@ -54,7 +50,7 @@ if Cc == 1:  # 스페셜 메뉴가 있니?
 else:
     if Cc > 1:
         print('No')
-    elif Bc > 0:  # 이 아래부터는 스페셜 메뉴를 안시킴
+    elif Bm > 0:  # 이 아래부터는 스페셜 메뉴를 안시킴
         if Am >= 20000:
             print('Okay')
         else:
