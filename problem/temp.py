@@ -1,34 +1,19 @@
-import numpy
-dataset = set()
+n = int(input())
+a = dict()
 
-a, b = 0, 0
-while True:
-    while True:
-        c = numpy.random.randint(1, 10001)
-        if c in dataset:
-            pass
-        else:
-            break
-    print('? A', c, flush=True)
-    resp = int(input())
-    if resp == 1:
-        a = c
-        break
+for i in range(n):
+    z, x = input().split()
+    x = int(x)
+    a[z] = x
+jinjucost = a['jinju']
+c = 0
+
+for i in a:
+    if i == 'jinju':
+        pass
     else:
-        dataset.add(c)
-dataset = set()
-while True:
-    while True:
-        c = numpy.random.randint(1, 10001)
-        if c in dataset:
-            pass
-        else:
-            break
-    print('? B', c, flush=True)
-    resp = int(input())
-    if resp == 1:
-        b = c
-        break
-    else:
-        dataset.add(c)
-print('!', a + b)
+        if jinjucost < a[i]:
+            c += 1
+
+print(jinjucost)
+print(c)
