@@ -1,28 +1,19 @@
-# 20230422 미해결
-import sys
-
-L = int(input())
 N = int(input())
-# diri
-#   1
-# 4   2   // R입력 ->  1 추가
-#   3     // L입력 -> -1 추가
 
-# 1 -> y 추가 
-# 2 -> x 추가 
-# 3 -> y 제거  
-# 4 -> x 제거 
+data = []
 
-
-data = set()
-
-data.add((0, 0))
-
-x, y = 0, 0
-for _ in range(N):
-    i, diri = sys.stdin.readline().split()
-    i = int(i)
+for i in range(N):
+    temp = list(input().split())
+    # data.append()
+    temp[1], temp[2], temp[3] = map(int,(temp[1], temp[2], temp[3]))
+    data.append(temp)
     
-    for j in range(1, i + 1):
-        
+data.sort(key = lambda x : ( - x[1], x[2], -x[3], x[0]))
+# for i in data:
+#     for j in i:
+#         print(i, end = " ")
+#     print()
+for i in data:
+    print(i[0])
+    
     
