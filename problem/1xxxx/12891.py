@@ -1,6 +1,8 @@
 s, p = map(int, input().split())
 dna = input()
 minA, minC, minG, minT = map(int, input().split())
+
+
 start = 0
 end = p - 1 
 answer = 0
@@ -18,3 +20,4 @@ for i in range(s - p + 1):
         dict[dna[end + 1 + i]] += 1
     
 print(answer)
+
