@@ -15,7 +15,8 @@ def palindromeCheck(data):
 n = int(input())
 
 while True:
-    n += 1
+    
     if primeCheck(n) and palindromeCheck(n):
         print(n)
         break
+    n += 1
