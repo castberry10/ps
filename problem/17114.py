@@ -122,4 +122,4 @@ if ck == 0:
     print(-1)
 else:
     print(answer - 1)
-    
+    # 나중에 최적화 필요함
