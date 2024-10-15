@@ -24,7 +24,7 @@ def gcd(a, b): # O(log N) 유클리드호제법
 n = int(input())
 ls = list(map(int, input().split()))
 primeList = []
-for i in range(n): # 순회하며 글자수 합산 + 소수체크
+for i in range(n): # 순회하며 글자수 합산 + 소수체크 O(n) * O(n ** 0.5) = O(n ** 1.5)
     if isPrime(sum(map(int, list(str(ls[i]))))):
         primeList.append(ls[i])
 

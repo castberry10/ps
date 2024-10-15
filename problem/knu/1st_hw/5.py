@@ -1,37 +1,65 @@
 from collections import deque
 s = input()
 point = 0
-startFlag = False
-tagname = ""
-stack = deque()
-endFlag = False
-answer = True 
+answer = True
+temptagname = ""
+stack = deque() # 스택을 이용한 풀이 
+# 스택의 입력과 출력은 O(1) n번 반복하여 O(n)
+# 스택의 FIFO을 이용하여 태그 짝 맞추는 풀이 
 while True:
+    # print(point, len(s))
+    # print(stack)
     if point >= len(s):
         break
-    if s[point] == '<':
-        startFlag = True
-    elif s[point] == '/':
-        endFlag = True
-    elif s[point] == '>':
-        if startFlag and not endFlag: # 여는 태그 
-            stack.append(tagname)
-        elif startFlag and endFlag:
-            if s[point - 1] == "/": # 빈 태그
-                pass
-            else: # 닫는 태그 
-                if stack and stack.pop() == tagname:
-                    pass
+    if s[point] == "<":
+        temptagname = ""
+        if s[point + 1] == "/": # 닫는 태그일때 
+            point += 1
+            while True:
+                point += 1
+                if s[point] == ">": # 닫는 꺽쇠가 나올때까지
+                    if not stack:
+                        answer = False
+                        point += 1
+                        break
+                    else:
+                        stackpop = stack.pop()
+                    if temptagname == stackpop:
+                        point += 1
+                        break
+                    else: # 만약 다르면
+                        # print(temptagname, stackpop)
+                        # print("여는것과 닫는것이 스택이 다르면")
+                        answer = False
+                        point +=1 
+                        break
                 else:
-                    answer = False
+                    temptagname += s[point] 
+        else: # 빈 태그이거나 여는태그
+            point += 1
+            while True:
+                if s[point] == ">" or s[point] == " ": #여는태그
+                    stack.append(temptagname)
+                    if s[point] == ">":
+                        point += 1
+                    else:
+                        while True:
+                            if s[point] == ">":
+                                point += 1
+                                break
+                            else:
+                                point += 1
+                    break
+                elif s[point] == "/": # 빈태그
+                    point += 2
+                    break
+                else: 
+                    temptagname += s[point]
+                    point += 1
+    else: # context일 경우 
+        point += 1
                 
-        startFlag, endFlag = False, False
-        tagname = ""
-    else:
-        tagname += s[point]
-    point += 1
-
-if not stack and answer:
+if answer and not stack:
     print("true")
 else:
     print("false")

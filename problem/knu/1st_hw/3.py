@@ -29,7 +29,7 @@ while True:
     while True:
         if (data and currentTime < data[0][1]) or not data:
             break
-        else: # 힙 정렬 O(N log N) 힙 추가 O(log N)
+        else: #  힙 추가 O(log N)을 n번 반복 -> O(NlogN)
             heapq.heappush(hostqueue, tuple(data.popleft())) # 튜플로 인한 2차 힙정렬 효과 기대 
     ## 일단 치료 시작전까지 모든 사람 도착 
     # 치료 시작 ~~ 
