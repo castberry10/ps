@@ -8,7 +8,7 @@ answer = []
 
 for i in range(n):
     sumls[i + 1] = sumls[i] + ls[i + 1]
-# 누적합 배열 생성 O(n) 이후 접근은 O(n)
+# 누적합 배열 생성 O(n) 이후 접근은 O(1)
 
 # 슬라이드 인덱스 n - s + 1회만큼 반복 
 for i in range(n - s + 1):  
