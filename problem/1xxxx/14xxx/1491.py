@@ -9,6 +9,7 @@ dxy = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 x, y = 0, 0
 mapdata = [[0 for _ in range(n)] for _ in range(m)]
 while True: # 반복 
+    pass
     # 나중에 
 
 # answern, answerm = 0, 0
