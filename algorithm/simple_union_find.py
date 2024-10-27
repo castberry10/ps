@@ -16,6 +16,11 @@ def union(x, y):
         parent_node[y] = x
     else:
         parent_node[x] = y
+
+def is_connected(x,y):
+    return find(x) == find(y)
+
+
 # def union(x, y): # 랭크기반 합치기 
 #     x = find(x)
 #     y = find(y)
@@ -27,5 +32,3 @@ def union(x, y):
 #         else:
 #             parent_node[y] = x
 #             rank[x] += 1
-def is_connected(x,y):
-    return find(x) == find(y)
