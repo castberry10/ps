@@ -34,7 +34,8 @@ def func_sum(s, e):
 
 for i in range(q):
     a, b, c = map(int, input().split())
-    if a == 2:
-        print(func_sum(b-1, c-1))
     if a == 1:
         modify(b-1, c)
+    if a == 2:
+        print(func_sum(b-1, c-1))
+    
