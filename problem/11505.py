@@ -32,7 +32,7 @@ def get_product(start, end):
             end -= 1
         start = start // 2
         end = end // 2
-    return value_product 
+    return value_product
     
 def change_value(index, value):
     index += treesize // 2
