@@ -9,8 +9,8 @@ while treesize < size:
     treesize *= 2
 treesize *= 2
 
-segment_tree = [0] * (treesize + 1)
-
+segment_tree = [0] * treesize
+lazy = [0] * treesize
 for i in range(n):
     segment_tree[treesize//2 + i] = int(input())
 
@@ -34,20 +34,23 @@ def get_sum(start, end):
         end = end // 2
     return value_sum 
     
-def change_value(index, value):
-    index += treesize // 2
-    diff = value - segment_tree[index]
-    while index > 0:
-        segment_tree[index] += diff
-        index = index // 2
+def update_range(start, end, value):
+    pass
+
+def apply_lazy(start, end, index):
+    pass
 
 build_tree(treesize - 1)
 for i in range(m + k):
     data = input().rstrip()
-    a, b, c = map(int, input().split())
-    if a == 1: # 값 갱신
-        change_value(b - 1, c)
-    if a == 2: # 값 구하기
-        start = b - 1 
-        end = c - 1
-        print(get_sum(start, end))
+    if data[0] == '1':
+        pass
+    if data[0] == '2':
+        pass 
+    # a, b, c = map(int, input().split())
+    # if a == 1: # 값 갱신
+    #     change_value(b - 1, c)
+    # if a == 2: # 값 구하기
+    #     start = b - 1 
+    #     end = c - 1
+    #     print(get_sum(start, end))
