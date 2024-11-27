@@ -3,7 +3,7 @@ from collections import deque
 input = sys.stdin.readline
 
 n, m, k = map(int, input().split())
-
+# 그래프 표현 - 
 graph = {i: [] for i in range(1, n + 1)}
 for _ in range(m):
     u, v = map(int, input().split())
@@ -33,7 +33,7 @@ def bfs(start):
 distance = {city: bfs(city) for city in city_list}
 
 # 백트래킹
-# 브루트포스입니다. 시간복잡도는 O(N!)입니다. 
+# 브루트포스 시간복잡도는 O(N!)
 def bt(current_city, visited, total_time):
     if len(visited) == k:  # 모든 필수 도시를 방문했으면 종료
         return total_time
@@ -43,7 +43,8 @@ def bt(current_city, visited, total_time):
         if next_city not in visited: # 방문 안하면 
             time = distance[current_city][next_city]
             if time < float('inf'):  # 경로가 존재할 때만 진행
-                min_time = min(min_time, bt(next_city, visited | {next_city}, total_time + time))
+                if visited:
+                    min_time = min(min_time, bt(next_city, visited | {next_city}, total_time + time))
 
     return min_time
 

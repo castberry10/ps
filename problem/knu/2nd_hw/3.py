@@ -18,7 +18,7 @@ for k in range(1, n+1):
         for j in range(1, n + 1):
             graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j])
 
-visit = set()
+visit = set() # hashset 
 for i in range(1, n+1):
     for j in range(1, n+1):
         if graph[i][j] >= 1e9:
