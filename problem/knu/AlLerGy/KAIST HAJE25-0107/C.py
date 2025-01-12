@@ -8,15 +8,7 @@ def solve():
         return -1
     if  (arrow[Y_lo] >= target[Y_hi] or arrow[Y_hi] <= target[Y_lo]):
         return -1
-    ########## 겹친다 ! ##########
     
-    # if (arrow[Z_lo] < target[Z_hi] and arrow[Z_hi] > target[Z_lo]):
-    #     return 0 
-    # ###### 진짜 다 안겹침 #####
-    # if arrow[Z_hi] < target[Z_lo]:
-    #     return -1
-    
-    # if arrow[Z_lo] > target[Z_hi]:
     return abs(arrow[Z_lo] - target[Z_hi]) + 1
     
 print(solve())
