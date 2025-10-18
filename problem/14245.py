@@ -66,5 +66,5 @@ for i in range(m):
         a, b, c, d = map(int, data.split())
         update_range(1, 0, treesize//2 - 1, b, c, d)
     if data[0] == '2':
-        a, b, c = map(int, data.split())
-        print(get_xor(1, 0, treesize//2 - 1, b, c))
+        a, b = map(int, data.split())
+        print(get_xor(1, 0, treesize//2 - 1, b, b))
